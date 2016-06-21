@@ -15,6 +15,7 @@
     vm.addMutant = addMutant;
     vm.mutants =  $firebaseArray(mutantsRef); // ['deadpool', 'nightcrawler', 'gambit'];
     vm.newMutant = new Mutant();
+    vm.deleteMutant = deleteMutant;
 
     // We don't use vm.name because we're not referencing the controller (?)
     function Mutant() {
@@ -30,6 +31,11 @@
         // Adds both locally and to the database
         vm.mutants.$add(vm.newMutant);
         vm.newMutant = new Mutant();
+    }
+
+    function deleteMutant(mutant) {
+      //Premade delete method part of angularfire
+      vm.mutants.$remove(mutant);
     }
   }
 
