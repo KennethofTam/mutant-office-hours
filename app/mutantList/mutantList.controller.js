@@ -16,6 +16,7 @@
     vm.mutants =  $firebaseArray(mutantsRef); // ['deadpool', 'nightcrawler', 'gambit'];
     vm.newMutant = new Mutant();
     vm.deleteMutant = deleteMutant;
+    vm.toggleComplete = toggleComplete;
 
     // We don't use vm.name because we're not referencing the controller (?)
     function Mutant() {
@@ -36,6 +37,10 @@
     function deleteMutant(mutant) {
       //Premade delete method part of angularfire
       vm.mutants.$remove(mutant);
+    }
+
+    function toggleComplete(mutant) {
+      vm.mutants.$save(mutant);
     }
   }
 
