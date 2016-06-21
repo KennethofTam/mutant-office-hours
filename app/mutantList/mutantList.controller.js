@@ -10,10 +10,10 @@
   function MutantListController($firebaseArray){
     var vm = this;
     // var fireMutantsRef = new Firebase('https://mutant-school.firebaseio.com/');
-    var rootRef = firebase.database().ref();
+    var mutantsRef = firebase.database().ref().child('mutants');
 
     vm.addMutant = addMutant;
-    vm.mutants =  $firebaseArray(rootRef); // ['deadpool', 'nightcrawler', 'gambit'];
+    vm.mutants =  $firebaseArray(mutantsRef); // ['deadpool', 'nightcrawler', 'gambit'];
     vm.newMutant = new Mutant();
 
     // We don't use vm.name because we're not referencing the controller (?)
