@@ -13,6 +13,7 @@
 
     vm.register = register;
     vm.login = login;
+    vm.error = null;
     // vm.logout = logout;
     // vm.isLoggedIn = authService.isLoggedIn;
 
@@ -34,7 +35,7 @@
           return authService.sendWelcomeEmail(user.email);
         })
         .catch(function(error) {
-          console.log(error);
+          vm.error = error;
         });
     }
 
@@ -44,7 +45,7 @@
           $state.go('mutantList');
         })
         .catch(function(error) {
-          console.log(error);
+          vm.error = error;
         });
     }
     //
