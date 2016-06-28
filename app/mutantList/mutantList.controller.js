@@ -10,19 +10,19 @@
   function MutantListController(mutantService, textMessageService, user) {
     var vm = this;
 
-    vm.addMutant = addMutant;
+    // vm.addMutant = addMutant;
     vm.mutants = mutantService.mutantsByUser(user.uid);
-    vm.newMutant = new mutantService.Mutant();
+    // vm.newMutant = new mutantService.Mutant();
     vm.deleteMutant = deleteMutant;
     vm.toggleComplete = toggleComplete;
     vm.sendText = sendText;
 
-    function addMutant() {
-        //vm.mutants.push(vm.newMutant);
-        // Adds both locally and to the database
-        vm.mutants.$add(vm.newMutant);
-        vm.newMutant = new mutantService.Mutant(); //new Mutant();
-    }
+    // function addMutant() {
+    //     //vm.mutants.push(vm.newMutant);
+    //     // Adds both locally and to the database
+    //     vm.mutants.$add(vm.newMutant);
+    //     vm.newMutant = new mutantService.Mutant(); //new Mutant();
+    // }
 
     function deleteMutant(mutant) {
       //Premade $remove method part of angularfire
