@@ -8,6 +8,8 @@
   </head>
 
   <body>
+
+    <xt-navbar></xt-navbar>
     <div ui-view class="row" id="main"></div>
 
     <!-- Third party scripts -->
@@ -21,9 +23,27 @@
     <!-- Main app module -->
     <script src="app/app.module.js"></script>
 
+    <!-- Auth module -->
+    <script src="app/auth/auth.module.js"></script>
+    <script src="app/auth/config.route.js"></script>
+    <script src="app/auth/auth.controller.js"></script>
+    <script src="app/auth/auth.service.js"></script>
+
+
+    <!-- Core module -->
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/mutant.service.js"></script>
+    <script src="app/core/firebaseData.service.js"></script>
+    <script src="app/core/textMessage.service.js"></script>
+
     <!-- Home page module -->
     <script src="app/home/home.module.js"></script>
     <script src="app/home/config.route.js"></script>
+
+    <!-- Layout module -->
+    <script src="app/layout/layout.module.js"></script>
+    <script src="app/layout/navbar.directive.js"></script>
+
 
     <!-- mutantList module -->
     <script src="app/mutantList/mutantList.module.js"></script>
