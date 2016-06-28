@@ -3,6 +3,12 @@
     <form ng-submit="vm.login(vm.user)">
       <div class="column log-in-form">
         <h4 class="text-center">Log In</h4>
+
+        <!-- Server Authentification Errors -->
+        <div class="callout small alert" ng-show="vm.error" ng-bind="vm.error">
+          <!-- {{ vm.error.message }} why is this not the same as ng-bind's vm.error? I dunno -->
+        </div>
+
         <label>Email
           <input ng-model="vm.user.email" type="email" placeholder="somebody@example.com" required autofocus>
         </label>
