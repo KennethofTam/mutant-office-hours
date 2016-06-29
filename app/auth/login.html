@@ -1,6 +1,7 @@
 <div class="medium-6 medium-centered large-4 large-centered columns">
 
-    <form ng-submit="vm.login(vm.user)">
+    <!-- novalidate prevents html5 from doing validation or something -->
+    <form ng-submit="vm.login(vm.user)" name="authForm" novalidate>
       <div class="column log-in-form">
         <h4 class="text-center">Log In</h4>
 
@@ -9,12 +10,33 @@
           <!-- {{ vm.error.message }} why is this not the same as ng-bind's vm.error? I dunno -->
         </div>
 
+
+
         <label>Email
-          <input ng-model="vm.user.email" type="email" placeholder="somebody@example.com" required autofocus>
+          <input ng-model="vm.user.email" type="email" name="email" placeholder="somebody@example.com" required autofocus>
         </label>
+
+        <!-- Email errors -->
+        <!-- authForm is the form name, email is the name of the text field -->
+        <div class="callout small alert" ng-show="authForm.$submitted && authForm.email.$error.required">
+          Email can't be blank
+        </div>
+
+        <!-- Expects type of email in form -->
+        <div class="callout small alert" ng-show="authForm.$submitted && authForm.email.$error.email">
+          Email is formatted incorrectly
+        </div>
+
+
         <label>Password
-          <input ng-model="vm.user.password" type="password" placeholder="Password" required>
+          <input ng-model="vm.user.password" type="password" name="password" placeholder="Password" required>
         </label>
+
+        <!-- Password errors  -->
+        <div class="callout small alert" ng-show="authForm.$submitted && authForm.password.$error.required">
+          Password can't be blank
+        </div>
+
         <p><button type="submit" class="button expanded">Log In</button></p>
       </div>
     </form>
