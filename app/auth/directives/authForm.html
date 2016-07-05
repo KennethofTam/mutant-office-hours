@@ -1,6 +1,6 @@
 <div class="medium-6 medium-centered large-4 large-centered columns">
 
-    <form ng-submit="authForm.$valid" name="authForm" novalidate>
+    <form ng-submit="authForm.$valid && vm.submitFunction({user: vm.user})" name="authForm" novalidate>
       <div class="column log-in-form">
         <h4 class="text-center" ng-bind="vm.formName"></h4>
 
@@ -27,7 +27,11 @@
         </div>
 
         <label>Password
-          <input ng-model="vm.user.password" type="password" name="password" placeholder="Password" required>
+          <input
+            ng-model="vm.user.password"
+            type="password"
+            name="password"
+            placeholder="Password" required>
         </label>
 
         <!-- Password errors -->
@@ -35,6 +39,29 @@
           Password can't be blank
         </div>
 
+        <label ng-if="vm.registerBool">Name
+          <input
+
+            ng-model="vm.user.name"
+            type="text"
+            name="user"
+            placeholder="John Doe"
+            ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 750, 'blur': 0 } }"
+            autofocus>
+        </label>
+
+        <div ng-controller="AuthController">
+          <p>
+            <button
+              type="button"
+              ng-click="vm.passwordReset()"
+              class="button success"
+              > Forget your password?
+            </button>
+          </p>
+        </div>
+
+        <!-- Do delete account -->
 
         <p><button type="submit" class="button expanded" ng-bind="vm.formName"></button></p>
       </div>

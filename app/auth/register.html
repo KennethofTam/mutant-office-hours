@@ -1,9 +1,14 @@
-<div class="medium-6 medium-centered large-4 large-centered columns">
+<!-- <div class="medium-6 medium-centered large-4 large-centered columns"> -->
 
 
 
-        <xt-login-form></xt-login-form>
+<xt-auth-form
+  form-name="Register"
+  submit-function="vm.register(user)"
+  error="vm.error"
+  register-bool="true",>
+</xt-auth-form>
 
 
 
-  </div>
+  <!-- </div> -->

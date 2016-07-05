@@ -14,12 +14,21 @@
       bindToController: true,
       scope: {
         formName: '@',
+        submitFunction: '&',
+        error: '=',
+        registerBool: '@',
       }
     };
   }
 
   function AuthFormController() {
     var vm = this;
+
+    vm.user = {
+      email: '',
+      password: '',
+      name: ''
+    }
   }
 
 })();

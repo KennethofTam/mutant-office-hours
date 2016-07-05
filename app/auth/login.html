@@ -1,7 +1,14 @@
 <!-- <div class="medium-6 medium-centered large-4 large-centered columns"> -->
 
-    <!-- ngvalidate prevents html5 from doing validation or something -->
-    <!-- <form ng-submit="vm.login(vm.user)" name="authForm" novalidate> -->
-    <xt-login-form form-name = "Log in"></xt-login-form>
+<!-- ngvalidate prevents html5 from doing validation or something -->
+<!-- <form ng-submit="vm.login(vm.user)" name="authForm" novalidate> -->
+<xt-auth-form
+  form-name="Log in"
+  submit-function="vm.login(user)"
+  error="vm.error"
+  register-bool="",
+  password-reset-function="vm.passwordReset()",>
+
+</xt-auth-form>
 
   <!-- </div> -->

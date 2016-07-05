@@ -14,6 +14,7 @@
       mutants: root.child('mutants'),
       users: root.child('users'),
       emails: root.child('emails'),
+      names: root.child('names')
     };
 
     return service;

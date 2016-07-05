@@ -20,11 +20,16 @@
   function NavbarController($state, authService) {
     var vm = this;
     vm.logout = logout;
+    vm.mutantSettings = mutantSettings;
     vm.isLoggedIn = authService.isLoggedIn;
 
     function logout() {
       authService.logout(); //auth.$signOut();
       $state.go('home');
+    }
+
+    function mutantSettings() {
+      $state.go('mutantSettings');
     }
 
   }
