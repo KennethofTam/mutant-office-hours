@@ -1,0 +1,36 @@
+
+
+<button ui-sref="mutantList" type="button" onclick="testFunction()" class="button success" name="button">Change Password</button>
+
+<button ui-sref="home" type="button" onclick="deleteFunction()" class="button alert" name="button">Delete Account</button>
+
+<script>
+function testFunction() {
+    console.log("Hello");
+}
+
+function deleteFunction() {
+  var ref = new Firebase("https://mutant-hours-8f7c3.firebaseio.com/");
+  ref.removeUser({
+    email: "pancakes@pancakes.com",
+    password: "pancakes"
+  }, function(error) {
+    if (error) {
+      switch (error.code) {
+        case "INVALID_USER":
+          console.log("The specified user account does not exist.");
+          break;
+        case "INVALID_PASSWORD":
+          console.log("The specified user account password is incorrect.");
+          break;
+        default:
+          console.log("Error removing user:", error);
+      }
+    } else {
+      console.log("User account deleted successfully!");
+    }
+  });
+
+
+}
+</script>

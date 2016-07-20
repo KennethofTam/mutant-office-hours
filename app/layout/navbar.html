@@ -8,7 +8,7 @@
     <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
       <li><a ui-sref="login" ng-show="!vm.isLoggedIn()">Log in</a></li>
       <li><a href="#" ng-click="" ng-show="vm.isLoggedIn()">Text History</a></li>
-      <li><a href="#" ng-click="vm.mutantSettings()" ng-show="vm.isLoggedIn()">Settings</a></li>
+      <li><a ui-sref="mutantSettings" ng-click="vm.mutantSettings()" ng-show="vm.isLoggedIn()">Settings</a></li>
       <li><a href="#" ng-click="vm.logout()" ng-show="vm.isLoggedIn()">Log out</a></li>
 
     </ul>

@@ -20,6 +20,12 @@
         controller: 'AuthController',
         controllerAs: 'vm'
       });
+      $stateProvider.state('resetPassword', {
+        url: '/resetpassword',
+        templateUrl: 'app/auth/resetPassword.html',
+        controller: 'AuthController',
+        controllerAs: 'vm'
+      });
     }
 
 })();

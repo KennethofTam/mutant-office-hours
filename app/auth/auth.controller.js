@@ -13,7 +13,6 @@
     vm.register = register;
     vm.login = login;
     vm.error = null;
-    vm.passwordReset = vm.passwordReset;
     // vm.logout = logout;
     // vm.isLoggedIn = authService.isLoggedIn;
 
@@ -49,25 +48,7 @@
    //   $state.go('home');
    // }
 
-   function passwordReset() {
-     console.log("Password Reset sent")
-     var ref = new Firebase("https://mutant-hours-8f7c3.firebaseio.com/");
-      ref.resetPassword({
-        email: "ktam@purdue.edu"
-      }, function(error) {
-        if (error) {
-          switch (error.code) {
-            case "INVALID_USER":
-              console.log("The specified user account does not exist.");
-              break;
-            default:
-              console.log("Error resetting password:", error);
-          }
-        } else {
-          console.log("Password reset email sent successfully!");
-        }
-      });
-   }
+
 
   }
 })();

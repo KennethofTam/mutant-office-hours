@@ -17,6 +17,17 @@
         user: resolveUser,
       },
     });
+
+    $stateProvider.state('mutantSettings', {
+      url: '/mutantsettings',
+      templateUrl: 'app/mutantList/mutantSettings.html',
+      controller: 'MutantListController',
+      controllerAs: 'vm',
+      resolve: {
+        user: resolveUser,
+      },
+    });
+
   }
 
   resolveUser.$inject = ['authService'];

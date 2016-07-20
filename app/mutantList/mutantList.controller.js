@@ -9,7 +9,7 @@
 
   function MutantListController(mutantService, user) {
     var vm = this;
-
+    var vm = deleteAccount;
     // vm.addMutant = addMutant;
     vm.mutants = mutantService.mutantsByUser(user.uid);
     // vm.newMutant = new mutantService.Mutant();
@@ -22,6 +22,9 @@
     //     vm.newMutant = new mutantService.Mutant(); //new Mutant();
     // }
 
+    function deleteAccount() {
+      console.log("Ahhhh");
+    }
 
   }
 })();

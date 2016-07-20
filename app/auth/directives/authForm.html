@@ -50,14 +50,20 @@
             autofocus>
         </label>
 
-        <div ng-controller="AuthController">
+        <div ng-if="!vm.registerBool" ng-controller="AuthController">
           <p>
             <button
+              ui-sref="resetPassword"
               type="button"
-              ng-click="vm.passwordReset()"
               class="button success"
               > Forget your password?
             </button>
+            <!-- <button
+             ng-click="vm.passwordReset()";
+             type="button"
+             class="button success"
+             > Forget your password?
+             </button> -->
           </p>
         </div>
 

@@ -8,20 +8,20 @@
   configFunction.$inject = ['$stateProvider'];
 
   function configFunction($stateProvider) {
-    $stateProvider.state('mutantSettings', {
-      url: '/mutantsetting',
-      templateUrl: 'app/mutantList/mutantSettings.html',
-      controller: 'MutantSettingsController',
-      controllerAs: 'vm',
-      resolve: {
-        user: resolveUser,
-      },
-    });
+    // $stateProvider.state('mutantSettings', {
+    //   url: '/mutantsettings',
+    //   templateUrl: 'app/mutantSettings/mutantSettings.html',
+    //   controller: 'MutantSettingsController',
+    //   controllerAs: 'vm',
+    //   // resolve: {
+    //   //   user: resolveUser,
+    //   // },
+    // });
   }
-
-  resolveUser.$inject = ['authService'];
-
-  function resolveUser(authService) {
-    return authService.auth.$requireSignIn();
-  }
+  //
+  // resolveUser.$inject = ['authService'];
+  //
+  // function resolveUser(authService) {
+  //   return authService.auth.$requireSignIn();
+  // }
 })();
